@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Menna</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(160deg,#000,#0b0b0b,#000);
+  color:#fff;
+  font-family:"Segoe UI",Arial;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.box{
+  background:rgba(255,255,255,0.05);
+  padding:40px 30px;
+  border-radius:22px;
+  box-shadow:0 0 40px rgba(255,77,109,0.35);
+  width:90%;
+  max-width:420px;
+}
+
+input{
+  padding:12px;
+  font-size:18px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  width:85%;
+  text-align:center;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 35px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d6d;
+  color:white;
+}
+
+#content{display:none}
+#type{
+  font-size:20px;
+  line-height:2;
+  white-space:pre-line;
+}
+</style>
+</head>
+
+<body>
+
+<div id="login" class="box">
+  <h2>🎂 Enter Password</h2>
+  <input id="pass" placeholder="DD/MM/YYYY">
+  <br>
+  <button onclick="openPage()">Open ❤️</button>
+</div>
+
+<div id="content" class="box">
+  <h1>Happy Birthday Menna 💖</h1>
+  <div id="type"></div>
+</div>
+
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_4b70b7b3b4.mp3">
+</audio>
+
+<script>
+const text = `
+كل سنة وانتي طيبة يا مِنة 🎂🤍
+كل سنة وانتي النعمة اللي بشكر ربنا عليها كل يوم ✨
+
+عيد ميلادك مش يوم عادي،
+ده اليوم اللي الدنيا بقت أحلى من بعده 💫
+
+بحبك حب كبير،
+حب يخلي قلبي يهدى لما أنادي اسمك ❤️
+حب يخلي ضحكتك أهم من أي حاجة في حياتي.
+
+كل سنة وانتي ضهري،
+وأماني،
+وأكتر واحدة أمان في الدنيا دي 🤍
+
+بتمنى أيامك الجاية تبقى كلها فرح،
+وضي،
+ونجاح،
+وأكون أنا دايمًا جنبك في كل خطوة 💖
+
+كل سنة وانتي حبيبتي،
+وكل سنة وانتي معايا،
+وكل سنة وأنا بحبك أكتر 🌙
+`;
+
+let i=0;
+function typeWriter(){
+  if(i<text.length){
+    document.getElementById("type").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeWriter,45);
+  }
+}
+
+function openPage(){
+  if(document.getElementById("pass").value==="26/1/2008"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("content").style.display="block";
+    document.getElementById("music").play();
+    typeWriter();
+  }else{
+    alert("Password Wrong 💔");
+  }
+}
+</script>
+
+</body>
+</html>
